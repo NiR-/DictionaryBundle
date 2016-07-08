@@ -32,16 +32,6 @@ class CallableDictionarySpec extends ObjectBehavior
         $this->shouldImplement('Knp\DictionaryBundle\Dictionary');
     }
 
-    function it_cant_be_constructed_with_something_else_than_a_callable()
-    {
-        $this->beConstructedWith('foo', array());
-
-        $this
-            ->shouldThrow(new \InvalidArgumentException('Second argument must be a callable.'))
-            ->duringInstantiation()
-        ;
-    }
-
     function it_supports_some_array_access_functions()
     {
         $dictionary = $this->getWrappedObject();
